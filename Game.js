@@ -112,10 +112,10 @@ spriteSheet.src = "pac-man_spritesheet.png"
 //funkce pro nsateveni smeru ve kterem se pacman pohybuje a pro restartovani hry
 document.onkeydown = (e) => {
     if (!e) e = window.event;
-    if (e.key == "w") pacman.changeDir(0, -1);
-    else if (e.key == "a") pacman.changeDir(-1, 0);
-    else if (e.key == "s") pacman.changeDir(0, 1);
-    else if (e.key == "d") pacman.changeDir(1, 0);
+    if (e.key.toLowerCase() == "w" || e.key == "ArrowUp") pacman.changeDir(0, -1);
+    else if (e.key.toLowerCase() == "a" || e.key == "ArrowLeft") pacman.changeDir(-1, 0);
+    else if (e.key.toLowerCase() == "s" || e.key == "ArrowDown") pacman.changeDir(0, 1);
+    else if (e.key.toLowerCase() == "d" || e.key == "ArrowRight") pacman.changeDir(1, 0);
     else if (lives == 0 && e.key == " ") {
         lives = 3;
         livesText.innerHTML = lives;
